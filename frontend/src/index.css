@@ -1,0 +1,48 @@
+@import "tailwindcss";
+@keyframes fadePage {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUpSmooth {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes heart {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.animate-page {
+  animation: fadePage 0.8s ease-out forwards;
+}
+
+.animate-smooth {
+  animation: slideUpSmooth 1s ease-out forwards;
+}
+
+.animate-heart {
+  animation: heart 0.8s ease-in-out;
+}
