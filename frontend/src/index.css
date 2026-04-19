@@ -34,7 +34,9 @@
     opacity: 0;
   }
 }
-
+html, body {
+  overflow-x: hidden;
+}
 .animate-page {
   animation: fadePage 0.8s ease-out forwards;
 }

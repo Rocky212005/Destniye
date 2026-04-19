@@ -32,7 +32,7 @@ async function createPost(req, res) {
 }
 async function getPost(req,res) {
     
-    const posts=await postModel.find().populate("userId", "fullName profileImg").sort({ createdAt: -1 })
+    const posts=await postModel.find().populate("userId", "fullName profileImg followers").sort({ createdAt: -1 })
 
     return res.status(200).json({
         message:"post facted succesfully",

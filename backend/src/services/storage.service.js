@@ -14,5 +14,11 @@ async function uploadFile(buffer){
     })
     return result;
 }
+// const uploadFile=async (file)=>{
+//     return await imagekit.upload({
+//         file:file,
+//         fileName:Date.now()+".jpg"
+//     })
+// }
 
 module.exports=uploadFile;

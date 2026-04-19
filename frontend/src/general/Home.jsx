@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../components/Navbar.jsx";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   const cities = [
@@ -9,6 +10,16 @@ export default function Home() {
     { name: "Dubai", country: "dubai", img: "https://cdn.britannica.com/93/199193-050-9EA1781A/view-Dubai-foreground-Burj-al-Arab-Hotel-United.jpg" },
   ];
 
+  const navigate = useNavigate()
+  const handleStart = () => {
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (user) {
+      navigate("/feed");   // already logged in
+    } else {
+      navigate("/login");  // not logged in
+    }
+  };
   return (
     <div className="bg-slate-950 text-white font-[Poppins] animate-page">
       <Navbar />
@@ -32,7 +43,7 @@ export default function Home() {
             Explore the world & build your travel story
           </p>
 
-          <button className="bg-gradient-to-r from-red-500 to-purple-600 px-8 py-3 rounded-full transition hover:scale-105">
+          <button onClick={handleStart} className="bg-gradient-to-r from-red-500 to-purple-600 px-8 py-3 rounded-full transition hover:scale-105">
             Start Exploring
           </button>
         </div>

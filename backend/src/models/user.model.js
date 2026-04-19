@@ -18,7 +18,17 @@ const userSchema=new mongoose.Schema({
      profileImg:{
         type:String,   // store image URL
         default:""     // optional default image
+    },
+    following:[{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"User"
+    },
+],
+    followers:[{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"User"
     }
+    ],
 },
 {
     timestamps:true
