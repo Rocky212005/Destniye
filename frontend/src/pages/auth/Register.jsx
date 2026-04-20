@@ -15,16 +15,27 @@ export default function Register() {
         formData.append("email", e.target.email.value);
         formData.append("password", e.target.password.value);
         formData.append("profileImg", e.target.profileImg.files[0]);
- 
-        const response=await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/user/register`,formData,{
-            withCredentials:true,
-            headers:{
-                "Content-Type":"multipart/form-data"
-            }
-        })
-        console.log(response.data)
+        try {
+            const response = await axios.post(
+                `${import.meta.env.VITE_API_URL}/api/auth/user/register`,
+                formData,
+                {
+                    withCredentials: true,
+                    headers: {
+                        "Content-Type": "multipart/form-data"
+                    }
+                }
+            );
 
-        navigate("/")
+            console.log(response.data);
+            navigate("/");
+
+        } catch (err) {
+            console.log(err.response?.data); // 👈 REAL ERROR
+
+            alert(err.response?.data?.message || "Something went wrong");
+        }
+
     }
 
     return (
@@ -42,7 +53,7 @@ export default function Register() {
 
                 <form className="space-y-4" onSubmit={handleSubmit} noValidate>
 
-                      {/* Profile Image */}
+                    {/* Profile Image */}
                     <div className="flex justify-center">
                         <label className="cursor-pointer">
                             <div className="w-24 h-24 rounded-full bg-slate-700 overflow-hidden flex items-center justify-center">
