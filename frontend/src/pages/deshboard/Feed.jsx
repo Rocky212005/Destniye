@@ -16,7 +16,7 @@ const Feed = () => {
 
   // 🔥 Fetch posts
   useEffect(() => {
-    axios.get("http://localhost:3000/post/feed", {
+    axios.get(`${import.meta.env.VITE_API_URL}/post/feed`, {
       withCredentials: true
     })
       .then((res) => {
