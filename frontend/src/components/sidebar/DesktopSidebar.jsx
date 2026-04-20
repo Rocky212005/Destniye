@@ -51,8 +51,7 @@ const DesktopSidebar = () => {
           <img 
             src={
               user?.profileImg
-                ? `${import.meta.env.VITE_API_URL}/uploads/${user.profileImg}`
-                : "https://i.pravatar.cc/100"
+              
             }
             className="w-30 h-30 mx-auto rounded-full"
             alt="user"

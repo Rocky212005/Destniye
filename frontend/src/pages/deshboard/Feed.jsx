@@ -134,9 +134,8 @@ const Feed = () => {
 
                   <img
                     src={
-                      post.userId?.profileImg
-                        ? `${import.meta.env.VITE_API_URL}/uploads/${post.userId.profileImg}`
-                        : "https://i.pravatar.cc/100"
+                      user?.profileImg
+                        
                     }
                     className='w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover'
                     alt="user"

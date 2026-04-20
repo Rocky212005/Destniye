@@ -43,8 +43,7 @@ const Profile = () => {
           <img
             src={
               user?.profileImg
-                ? `${import.meta.env.VITE_API_URL}/uploads/${user.profileImg}`
-                : "https://i.pravatar.cc/150"
+                
             }
             alt="profile"
             className='w-28 h-28 md:w-40 md:h-40 rounded-full object-cover border-2 border-gray-700'
