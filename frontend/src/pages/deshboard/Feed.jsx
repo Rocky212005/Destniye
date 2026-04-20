@@ -134,7 +134,7 @@ const Feed = () => {
 
                   <img
                     src={
-                      user?.profileImg
+                      post.userId?.profileImg
                         
                     }
                     className='w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover'

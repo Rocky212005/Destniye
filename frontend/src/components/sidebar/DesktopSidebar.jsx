@@ -50,9 +50,8 @@ const DesktopSidebar = () => {
           }} className='px-11 cursor-pointer'>
           <img 
             src={
-              user?.profileImg
-              
-            }
+             user?.profileImg
+              }
             className="w-30 h-30 mx-auto rounded-full"
             alt="user"
           />
