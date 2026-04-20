@@ -34,11 +34,11 @@ const CreatePost = () => {
         formData.append("placeName",placeName)
        try{
          setLoading(true)
-         await axios.post("http://localhost:3000/post/create-post",formData,{
+         await axios.post(`${import.meta.env.VITE_API_URL}/post/create-post`,formData,{
             withCredentials:true,
             headers:{
                 "Content-Type":"multipart/form-data"
-            }
+            } 
          })
          alert("post created succesfully" )
          navigate("/feed")

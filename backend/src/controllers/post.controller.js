@@ -15,6 +15,7 @@ async function createPost(req, res) {
       location: req.body.location,
       placeName: req.body.placeName,
     });
+    console.log("FILE:", req.file);
     console.log(req.user);
 
     return res.status(201).json({
@@ -26,7 +27,7 @@ async function createPost(req, res) {
     console.log(error);
     return res.status(500).json({
       message: "Error creating post",
-      error: error.message
+      error: error.message 
     });
   }
 }

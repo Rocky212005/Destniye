@@ -31,7 +31,7 @@ const Feed = () => {
   const handleLike = async (id) => {
     try {
       const res = await axios.post(
-        `http://localhost:3000/post/feed/${id}`,
+        `${import.meta.env.VITE_API_URL}/post/feed/${id}`,
         {},
         { withCredentials: true }
       );
@@ -63,7 +63,7 @@ const Feed = () => {
   const handleFollow = async (userId) => {
     try {
       await axios.post(
-        `http://localhost:3000/api/auth/user/follow/${userId}`,
+        `${import.meta.env.VITE_API_URL}/api/auth/user/follow/${userId}`,
         {},
         { withCredentials: true }
       );
@@ -135,7 +135,7 @@ const Feed = () => {
                   <img
                     src={
                       post.userId?.profileImg
-                        ? `http://localhost:3000/uploads/${post.userId.profileImg}`
+                        ? `${import.meta.env.VITE_API_URL}/uploads/${post.userId.profileImg}`
                         : "https://i.pravatar.cc/100"
                     }
                     className='w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover'

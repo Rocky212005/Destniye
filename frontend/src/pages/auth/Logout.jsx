@@ -8,7 +8,7 @@ const Logout = () => {
 
     const handleLogout = async () => {
         try {
-            await axios.get("http://localhost:3000/api/auth/user/logout", {
+            await axios.get(`${import.meta.env.VITE_API_URL}/api/auth/user/logout`, {
                 withCredentials: true
             })
 

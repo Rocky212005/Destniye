@@ -16,7 +16,7 @@ export default function Register() {
         formData.append("password", e.target.password.value);
         formData.append("profileImg", e.target.profileImg.files[0]);
  
-        const response=await axios.post("http://localhost:3000/api/auth/user/register",formData,{
+        const response=await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/user/register`,formData,{
             withCredentials:true,
             headers:{
                 "Content-Type":"multipart/form-data"

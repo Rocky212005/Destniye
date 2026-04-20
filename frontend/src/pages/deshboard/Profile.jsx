@@ -13,7 +13,7 @@ const Profile = () => {
     setUser(storedUser);
   }, []);
   useEffect(() => {
-    axios.get("http://localhost:3000/post/feed", {
+    axios.get(`${import.meta.env.VITE_API_URL}/post/feed`, {
       withCredentials: true
     }).then((res) => {
       const myPost = res.data.posts.filter(
@@ -43,7 +43,7 @@ const Profile = () => {
           <img
             src={
               user?.profileImg
-                ? `http://localhost:3000/uploads/${user.profileImg}`
+                ? `${import.meta.env.VITE_API_URL}/uploads/${user.profileImg}`
                 : "https://i.pravatar.cc/150"
             }
             alt="profile"
