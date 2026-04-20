@@ -12,7 +12,7 @@ const imagekit=new ImageKit({
 async function uploadFile(buffer){
     const result=await imagekit.upload({
         file:buffer,
-        fileName:"image.jpg"
+        fileName:Date.now()+".jpg"
     })
     return result;
 }
