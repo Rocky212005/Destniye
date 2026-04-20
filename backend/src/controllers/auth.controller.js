@@ -3,11 +3,12 @@ const userModel=require("../models/user.model")
 const bcrypt=require('bcryptjs')
 const cookieParser=require('cookie-parser')
 const jwt=require('jsonwebtoken');
+const uploadFile=require('../services/storage.service')
 const { model } = require("mongoose");
 
 async function registerUser(req,res){
     const {fullName , email ,password}=req.body;
-    const profileImg=req.file ?req.file.filename :null
+  
 
     const isUserAlradyExist=await userModel.findOne({
         email
@@ -17,6 +18,14 @@ async function registerUser(req,res){
         return res.status(400).json({
             message:"user alrady exists"
         })
+
+
+    }
+
+    let profileImg=null;
+    if (req.file) {
+      const result = await uploadFile(req.file.buffer);
+      profileImg = result.url; // ✅ IMPORTANT
     }
 
     const hashPassword=await bcrypt.hash(password,10);
