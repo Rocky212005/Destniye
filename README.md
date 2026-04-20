@@ -14,3 +14,6 @@
 ## Run Locally
 npm install
 npm run dev
+## mongodb pass
+QbEQ3eDuwW4FGMbB
+rahulmishra
