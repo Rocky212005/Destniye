@@ -7,7 +7,7 @@ const cors=require("cors")
 
 const app=express()
 app.use(cors({
-    origin:"https://destniye.vercel.app",
+     origin:"https://destniye.vercel.app",
     // origin:"http://localhost:5173",
     credentials:true
 }))

@@ -10,5 +10,5 @@ router.post('/user/login',authController.loginUser)
 router.get('/user/logout',authController.logoutUser)
 
 router.post("/user/follow/:id",authMiddleware,authController.followUser)
-
+ 
 module.exports=router

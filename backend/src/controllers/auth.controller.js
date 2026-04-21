@@ -24,7 +24,7 @@ async function registerUser(req,res){
 
     let profileImg=null;
     if (req.file) {
-      const result = await uploadFile(req.file.buffer);
+      const result = await uploadFile(req.file);
       profileImg = result.url; // ✅ IMPORTANT
     }
 

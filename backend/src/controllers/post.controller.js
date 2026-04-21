@@ -3,20 +3,46 @@ const postModel=require("../models/post.model")
 const uploadFile=require('../services/storage.service')
 
 
+// async function createPost(req, res) {
+//   try {
+//     const result = await uploadFile(req.file.buffer);
+
+//     const post = await postModel.create({
+//       // username:req.body.username,
+//       userId: req.user._id,
+//       image: result.url,
+//       caption: req.body.caption,
+//       location: req.body.location,
+//       placeName: req.body.placeName,
+//     });
+//     console.log("FILE:", req.file);
+//     console.log(req.user);
+
+//     return res.status(201).json({
+//       message: "post created successfully",
+//       post
+//     });
+
+//   } catch (error) {
+//     console.log(error);
+//     return res.status(500).json({
+//       message: "Error creating post",
+//       error: error.message 
+//     });
+//   }
+// }
+
+
 async function createPost(req, res) {
   try {
-    const result = await uploadFile(req.file.buffer);
+    const result = await uploadFile(req.file);
 
     const post = await postModel.create({
-      // username:req.body.username,
       userId: req.user._id,
       image: result.url,
       caption: req.body.caption,
-      location: req.body.location,
       placeName: req.body.placeName,
     });
-    console.log("FILE:", req.file);
-    console.log(req.user);
 
     return res.status(201).json({
       message: "post created successfully",
@@ -27,7 +53,7 @@ async function createPost(req, res) {
     console.log(error);
     return res.status(500).json({
       message: "Error creating post",
-      error: error.message 
+      error: error.message
     });
   }
 }
