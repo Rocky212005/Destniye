@@ -3,12 +3,13 @@ const cookieParser=require('cookie-parser')
 
 const authRoutes=require('./routes/auth.routes')
 const postRoutes=require('./routes/post.routes')
+const placeRoutes=require('./routes/places.routes')
 const cors=require("cors")
 
 const app=express()
 app.use(cors({
-     origin:"https://destniye.vercel.app",
-    // origin:"http://localhost:5173",
+    //  origin:"https://destniye.vercel.app",
+    origin:"http://localhost:5173",
     credentials:true
 }))
 app.use("/uploads", express.static("uploads"))
@@ -20,6 +21,7 @@ app.use("/uploads", express.static("uploads"))
 app.use('/api/auth',authRoutes)
 
 app.use('/post',postRoutes)
+app.use('/user',placeRoutes)
 
 
 module.exports=app;

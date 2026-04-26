@@ -25,7 +25,7 @@ export default function Home() {
       <Navbar />
 
       {/* HERO */}
-      <section className="relative h-screen flex items-center justify-center -mt-30">
+      <section className="relative h-screen flex items-center justify-center pt-">
         <img
           src="https://media.gettyimages.com/id/607582346/video/camera-and-me.jpg?s=640x640&k=20&c=uXkLIiKgdWV6u-v8thLUvy3n1UvNuKSjMXNvaEnq4WU="
           className="absolute w-full h-full object-cover opacity-50"

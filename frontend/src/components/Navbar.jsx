@@ -16,16 +16,16 @@ export default function Navbar() {
 
   return (
     <nav
-      className={` z-50 transition-all duration-500 ease-out sticky top-0
+      className={` fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out
       ${scrolled
-          ? "top-4 left-0 right-0 mx-auto max-w-5xl bg-slate-900/80 backdrop-blur-xl shadow-2xl rounded-full py-2 border border-blue-400/30 scale-[0.98]"
-          : "top-0 left-0 w-full bg-transparent py-5"
+          ? "mx-auto max-w-5xl bg-slate-900/80 backdrop-blur-xl shadow-2xl rounded-full py-2 border border-blue-400/30 scale-[0.98] mt-4"
+    : "w-full bg-transparent py-5"
         }`}
     >
       <div className="px-6 md:px-27 flex justify-between items-center">
 
         {/* Logo */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 ">
           <img
             src="/logo/destiny.png"
             alt="Destiny"
@@ -37,10 +37,10 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-8 text-white font-medium">
-          <Link className="hover:text-blue-400 transition">Home</Link>
-          <Link className="hover:text-blue-400 transition">Explore</Link>
-          <Link className="hover:text-blue-400 transition">BucketList</Link>
-          <Link className="hover:text-blue-400 transition">Profile</Link>
+           <Link to="/" className="hover:text-blue-400 transition font-bold text-[20px]">Home</Link>
+          <Link to="/feed" className="hover:text-blue-400 transition font-bold text-[20px]">Feed</Link>
+          <Link to="/destination" className="hover:text-blue-400 transition font-bold text-[20px]">Destinations</Link>
+          <Link to="/journal" className="hover:text-blue-400 transition font-bold text-[20px]">Journals</Link>
         </div>
 
         {/* Button */}
@@ -64,11 +64,11 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden mt-3 bg-slate-900/95 backdrop-blur-xl rounded-2xl p-6 mx-4 text-white space-y-4 shadow-lg">
-          <Link className="block">Home</Link>
-          <Link className="block">Explore</Link>
-          <Link className="block">BucketList</Link>
-          <Link className="block">Profile</Link>
+        <div className="md:hidden flex flex-col mt-3 bg-slate-900/95 backdrop-blur-xl rounded-2xl p-6 mx-4 text-white space-y-4 shadow-lg">
+          <Link to="/"  className="font-bold">Home</Link>
+          <Link to="/feed"  className="font-bold">Feed</Link>
+          <Link to="/destination"  className="font-bold">Destination</Link>
+          <Link to="/journal"  className="font-bold ">Journals</Link>
 
           <Link
             to="/login"

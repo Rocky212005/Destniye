@@ -7,6 +7,8 @@ import ProtectedRoute from './general/ProtectedRoute'
 import Feed from './pages/deshboard/Feed'
 import Profile from './pages/deshboard/Profile'
 import CreatePost from './pages/deshboard/CreatePost'
+import Destination from './general/Destination'
+import Journal from './general/Journal'
 
 
 const App = () => {
@@ -26,6 +28,8 @@ const App = () => {
             <Profile/>
           </ProtectedRoute>}/>
           <Route path='/create-post' element={<CreatePost/>}/>
+          <Route path='/destination' element={<Destination/>}/>
+          <Route path='/journal' element={<Journal/>}/>
           
       </Routes>
     </Router>
