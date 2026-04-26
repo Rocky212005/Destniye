@@ -8,8 +8,8 @@ const cors=require("cors")
 
 const app=express()
 app.use(cors({
-    //  origin:"https://destniye.vercel.app",
-    origin:"http://localhost:5173",
+     origin:"https://destniye.vercel.app",
+    // origin:"http://localhost:5173",
     credentials:true
 }))
 app.use("/uploads", express.static("uploads"))
